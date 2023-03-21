@@ -6,7 +6,7 @@ import styles from './welcome.style'
 const Welcome = () => {
   return (
     <View>
-      <Text>Welcome</Text>
+      <Text>Bienvenido Futuro trabajador</Text>
     </View>
   )
 }
