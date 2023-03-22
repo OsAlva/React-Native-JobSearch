@@ -23,8 +23,8 @@ const Welcome = () => {
   return (
     <View>
        <View style={styles.container}>
-        <Text style={styles.userName}>Hola Oscar</Text>
-        <Text style={styles.welcomeMessage}>Encuentra el trabajo que tanto buscas</Text>
+        <Text style={styles.userName}>Hello Oscar</Text>
+        <Text style={styles.welcomeMessage}>Find your perfect job</Text>
        </View>
 
        <View style={styles.searchContainer}>
