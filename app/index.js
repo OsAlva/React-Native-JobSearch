@@ -10,13 +10,14 @@ import {
 
 export default function Home() {
     const router = useRouter();
+    const [searchTerm, setSearchTerm] = useState("");
 
     //allow show the content safely without any notches or home buttons
     return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.black }}>
         <Stack.Screen
           options={{
-            headerStyle: { backgroundColor: COLORS.lightWhite },
+            headerStyle: { backgroundColor: COLORS.white },
             headerShadowVisible: false,
             headerLeft: () => (
               <ScreenHeaderBtn iconUrl={icons.menu} dimension='60%' />
@@ -34,7 +35,15 @@ export default function Home() {
                     padding: SIZES.medium
                     }}
             > 
-                <Welcome />
+                <Welcome 
+                    searchTerm={searchTerm}
+                    setSearchTerm={setSearchTerm}
+                    handleClick={() => {
+                        if(searchTerm){
+                            router.push(`/search/${searchTerm}`);
+                        }
+                    }}
+                />
                 <Popularjobs />
                 <Nearbyjobs />
             </View>
