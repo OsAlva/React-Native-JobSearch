@@ -10,13 +10,11 @@ import useFetch from '../../../hook/useFetch';
 
 const Popularjobs = () => {
   const router = useRouter();
-
-   const {data, isLoading, error} = useFetch
-   ('search', {
+  const {data, isLoading, error} = useFetch('search', {
     query: 'React developer',
-     num_pages: 1
+    num_pages: "1",
   })
-  const [selectedJob, setSelectedJob] = useState()
+  const [selectedJob, setSelectedJob] = useState();
   const handleCardPress = (item) => {}
 
   // console.log(data)
@@ -25,7 +23,7 @@ const Popularjobs = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>Popularjobs</Text>
+        <Text style={styles.headerTitle}>Popular jobs</Text>
         <TouchableOpacity>
           <Text style={styles.headerBtn}>See all</Text>
         </TouchableOpacity>
@@ -33,7 +31,7 @@ const Popularjobs = () => {
 
       <View style={styles.cardsContainer}>
         {isLoading ? (
-          <ActivityIndicator size="large" color={COLORS.primary} />
+          <ActivityIndicator size='large' color={COLORS.primary} />
         ) : error ? (
           <Text>Something went wrong</Text>
         ) : (
@@ -54,7 +52,7 @@ const Popularjobs = () => {
         )}
       </View>
     </View>
-  )
-}
+  );
+};
 
-export default Popularjobs
+export default Popularjobs;
